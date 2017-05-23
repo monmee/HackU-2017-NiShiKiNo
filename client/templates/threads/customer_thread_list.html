@@ -10,12 +10,24 @@
       </div>
       <div class="col s9">
         <!-- Teal page content  -->
-        <!-- <h1>Thread List</h1> -->
-        {{#each threads}}
-        {{>customerThreadItem}}
-        {{/each}}
-      </div>
+        <table class="highlight responsive-table bordered">
+          <thead>
+            <tr>
+              <th>Status</th>
+              <th>Date</th>
+              <th>Title</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each threads}}
+            <tr>
+              {{>customerThreadItem}}
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+        </div>
 
+      </div>
     </div>
-  </div>
-</template>
+  </template>
