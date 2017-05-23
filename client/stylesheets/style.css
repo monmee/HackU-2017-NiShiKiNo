@@ -1,0 +1,21 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #424242;
+}
+/*header nav ul {
+  height: 60px;
+  margin-top: 0;
+}*/
+/*.header-list {
+  height: 60px;
+  float: left;
+  list-style: none;
+  text-align: right;
+}*/
+
+.brand-logo {
+  /*font-family: "Roboto",light-italic;*/
+  font-family: GillSans, Calibri, Trebuchet, sans-serif;
+  color: red;
+}

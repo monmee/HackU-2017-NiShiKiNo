@@ -1,0 +1,21 @@
+<template name="customerThreadList">
+  <div class="threads">
+    <!-- Navbar goes here -->
+    <!-- Page Layout here -->
+    <h1>Thread List</h1>
+    <div class="row">
+      <div class="col s3">
+        <!-- Grey navigation panel -->
+        {{> profileCard}}
+      </div>
+      <div class="col s9">
+        <!-- Teal page content  -->
+        <!-- <h1>Thread List</h1> -->
+        {{#each threads}}
+        {{>customerThreadItem}}
+        {{/each}}
+      </div>
+
+    </div>
+  </div>
+</template>
