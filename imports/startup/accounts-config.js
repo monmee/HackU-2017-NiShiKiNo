@@ -1,6 +1,6 @@
 import { Accounts } from 'meteor/accounts-base';
 
 Accounts.ui.config({
-    forbidClientAccountCreation: false
+    forbidClientAccountCreation: false,
     passwordSignupFields: 'USERNAME_ONLY',
 });
