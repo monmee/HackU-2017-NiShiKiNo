@@ -1,31 +1,31 @@
 <template name="header">
-  <!-- <div class="navbar-fixed" role="navigation">
-  <nav>
-  <div class="nav-wrapper">
-  <a href="#!" class="brand-logo">Logo</a>
-  <ul class="right hide-on-med-and-down">
-  <li><a href="sass.html">Sass</a></li>
-  <li><a href="badges.html">Components</a></li>
+    <!-- <div class="navbar-fixed" role="navigation">
+    <nav>
+    <div class="nav-wrapper">
+    <a href="#!" class="brand-logo">Logo</a>
+    <ul class="right hide-on-med-and-down">
+    <li><a href="sass.html">Sass</a></li>
+    <li><a href="badges.html">Components</a></li>
 </ul>
 </div>
 </nav>
 </div> -->
 <nav class="light-blue darken-3" role="navigation">
-  <div class="nav-wrapper">
-    <a href="/" class="brand-logo" id="logo-container">HACKU APP</a>
-    <!-- <ul class="right">
-    <li><a href="about.html">About</a></li>
-    <li><a href="privacy.html">Privacy</a></li>
-    <li><a href="terms.html">Terms</a></li>
-  </ul> -->
+    <div class="nav-wrapper">
+        <a href="/" class="brand-logo" id="logo-container">HACKU APP</a>
+        <!-- <ul class="right">
+        <li><a href="about.html">About</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+    </ul> -->
+    <div class="collapse navbar-collapse right" id="navigation">
 
-  <div class="collapse navbar-collapse right" id="navigation">
-    <ul class="nav navbar-nav">
-      <li><a href="cthread">Thread</a></li>
-      <li><a href="{{pathFor 'about'}}" >About</a></li>
-      <li>{{> loginButtons}}</li>
-    </ul>
-  </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="cthread">Thread</a></li>
+            <li><a href="{{pathFor 'about'}}" >About</a></li>
+            <li>{{> loginButtons}}</li>
+        </ul>
+    </div>
 </div>
 </nav>
 </template>
