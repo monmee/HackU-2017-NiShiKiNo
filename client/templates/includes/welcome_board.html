@@ -1,10 +1,12 @@
 <template name="welcomeBoard">
     <h1 class="center-align">ようこそ！{{currentUser.emails.[0].address}}さん</h1>
-
-    <!-- <img class="responsive-img" src="/images/sumire.jpg">
-    <div class="caption center-align z-depth-4">
-    <h3>This is our big Tagline!</h3>
-    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-</div> -->
-
+    <script>
+    if (navigator.geolocation) {
+        //Geolocation APIを利用できる環境向けの処理
+        alert("位置情報が利用できます");
+    } else {
+        //Geolocation APIを利用できない環境向けの処理
+        alert("位置情報が利用できません");
+    }
+    </script>
 </template>
