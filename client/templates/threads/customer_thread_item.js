@@ -1,5 +1,3 @@
-
-
 Template.customerThreadItem.helpers({
   statusIcon: function(status){
     var icon;
