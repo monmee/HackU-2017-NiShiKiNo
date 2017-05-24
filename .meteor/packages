@@ -24,3 +24,5 @@ sacha:spin
 accounts-password
 alisalaah:accounts-ui-material
 iron:router
+useraccounts:materialize
+npm-bcrypt
