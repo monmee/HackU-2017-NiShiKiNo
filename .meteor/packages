@@ -22,7 +22,7 @@ insecure@1.0.7                # Allow all DB writes from clients (for prototypin
 materialize:materialize
 sacha:spin
 accounts-password
-alisalaah:accounts-ui-material
 iron:router
-useraccounts:materialize
 npm-bcrypt
+useraccounts:materialize
+accounts-ui-unstyled
