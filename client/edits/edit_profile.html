@@ -1,13 +1,10 @@
 <template name="editProfile">
     <div class="container">
-        <form class="profile" action="/edit">
-            <div><span>Name:</span><input type="text" name="user-name" placeholder="Type your name." /></div>
-            <div><span>Old Password:</span><input type="password" name="old-pass" placeholder="Type password." /></div>
-            <div><span>New Password:</span><input type="password" name="new-pass" placeholder="Type new password." /></div>
-            <div><span>New Password(Confirm):</span><input type="password" name="check-pass" placeholder="Retype new password." /></div>
-            <div><span>Image:</span><input type="file" name="media[]" accept="image/gif,image/jpeg,image/png" placeholder="Type to add new tasks" /></div>
-            <input type="submit" value="Submit">
-        </form>
-        
+        <div><span>Name:</span><input type="text" name="user-name" placeholder="Type your name." /></div>
+        <div><span>Old Password:</span><input type="password" name="old-pass" placeholder="Type password." /></div>
+        <div><span>New Password:</span><input type="password" name="new-pass" placeholder="Type new password." /></div>
+        <div><span>New Password(Confirm):</span><input type="password" name="check-pass" placeholder="Retype new password." /></div>
+        <div><span>Image:</span><input type="file" name="media[]" accept="image/gif,image/jpeg,image/png" placeholder="Type to add new tasks" /></div>
+        <input type="submit" value="Submit">
     </div>
 </template>
