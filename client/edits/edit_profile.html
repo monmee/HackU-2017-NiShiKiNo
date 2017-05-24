@@ -1,10 +1,13 @@
 <template name="editProfile">
     <div class="container">
-        <div><span>Name:</span><input type="text" name="user-name" placeholder="Type your name." /></div>
-        <div><span>Old Password:</span><input type="password" name="old-pass" placeholder="Type password." /></div>
-        <div><span>New Password:</span><input type="password" name="new-pass" placeholder="Type new password." /></div>
-        <div><span>New Password(Confirm):</span><input type="password" name="check-pass" placeholder="Retype new password." /></div>
-        <div><span>Image:</span><input type="file" name="media[]" accept="image/gif,image/jpeg,image/png" placeholder="Type to add new tasks" /></div>
-        <input type="submit" value="Submit">
+        <form class="updateProfile" action='/cthread'>
+            <span>Your Name:</span><input type="text" name="user-name" placeholder="Type your name." />
+            <span>Old Password:</span><input type="password" name="old-pass" placeholder="Type password." />
+            <span>New Password:</span><input type="password" name="new-pass" placeholder="Type new password." />
+            <span>New Password(Confirm):</span><input type="password" name="check-pass" placeholder="Retype new password." />
+            <span>Comment:</span><input type="text" name="comment" placeholder="Type your name." />
+            <div><span>Image: </span><input type="file" name="media[]" accept="image/gif,image/jpeg,image/png" placeholder="Type to add new tasks" /></div>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
     </div>
 </template>
