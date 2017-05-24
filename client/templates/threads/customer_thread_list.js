@@ -1,4 +1,4 @@
-threadData=[
+var threadData=[
   {
     threadID: '1',
     title:'カレーのアレ',
@@ -26,7 +26,8 @@ Template.customerThreadList.events({
   'click .threadLists tr':function(e){
     // console.log('this:'+this._id);
     // console.log('this:'+this.threadID);
-    Router.go('customerThreadDetail', {_id: this._id});
+    Router.go('customerThreadDetail');
+    // Router.go('customerThreadDetail', {_id: this._id});
   },
   'click .add-thread':function(){
     Router.go('customerThreadAdd');
