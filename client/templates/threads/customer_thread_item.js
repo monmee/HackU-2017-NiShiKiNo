@@ -8,6 +8,6 @@ Template.customerThreadItem.helpers({
     }else{
       icon='<div class="left-align"><ul class="center-align"><li><i class="material-icons red-text text-darken-2 center">report_problem</i></li><li>Error</li></ul></div>';
     }
-    return new Spacebars.SafeString(icon);;
+    return new Spacebars.SafeString(icon);
   }
 });
