@@ -4,6 +4,3 @@ Meteor.publish('threads',function(){
   return Threads.find();
 })
 
-Meteor.publish('passengers', function(){
-  return Passengers.find();
-})

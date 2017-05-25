@@ -1,8 +1,5 @@
 import { Meteor } from 'meteor/meteor';
 import './edit_profile.html';
-import SimpleSchema from 'simpl-schema';
-SimpleSchema.extendOptions(['autoform']);
-
 
 Template.editProfile.helpers({
   username: function() 
