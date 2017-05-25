@@ -24,5 +24,4 @@ iron:router
 npm-bcrypt
 aldeed:autoform
 useraccounts:materialize
-npm-bcrypt
 dburles:google-maps
