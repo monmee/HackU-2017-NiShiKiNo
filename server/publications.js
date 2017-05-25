@@ -4,3 +4,6 @@ Meteor.publish('threads',function(){
   return Threads.find();
 })
 
+Meteor.publish('records',function(){
+  return Records.find();
+})
