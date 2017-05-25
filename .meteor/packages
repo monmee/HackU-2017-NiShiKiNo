@@ -25,3 +25,4 @@ alisalaah:accounts-ui-material
 iron:router
 useraccounts:materialize
 npm-bcrypt
+aldeed:autoform

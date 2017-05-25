@@ -1,8 +1,8 @@
 <template name="editProfile">
     <div class="container">
-        <form class="updat-profile" action='/cthread'>
-            <span>Your Name:</span><input type="text" name="user-name" placeholder="Type your name." />
-            <span>Old Password:</span><input type="password" name="old-pass" placeholder="Type password." />
+        <form class="update-profile">
+            <span>Your Name:</span><input type="text" name="user-name" value="NISHIKAWA" />
+            <span>Old Password:</span><input type="password" name="old-pass" placeholder="Type old password." />
             <span>New Password:</span><input type="password" name="new-pass" placeholder="Type new password." />
             <span>New Password(Confirm):</span><input type="password" name="check-pass" placeholder="Retype new password." />
             <span>Comment:</span><input type="text" name="comment" placeholder="Type your name." />
@@ -10,4 +10,7 @@
             <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>
+    {{currentUser}}
+        
+    
 </template>
