@@ -1,17 +1,18 @@
 <template name="customerThreadDetail">
-  <div class="threads">
-    <!-- Navbar goes here -->
-    <!-- Page Layout here -->
-    <h3>Thread Detail</h3>
-    <div class="row">
-      <div class="col s3">
-        <!-- Grey navigation panel -->
-        {{> profileCard}}
-      </div>
-      <div class="col s9">
-        <!-- Teal page content  -->
-        <div class="card-panel z-depth-1 threadLists">
-
+  <!-- Navbar goes here -->
+  <!-- Page Layout here -->
+  <h3>Thread Detail</h3>
+  <div class="row">
+    <div class="col s3">
+      <!-- Grey navigation panel -->
+      {{> profileCard}}
+    </div>
+    <div class="col s9">
+      <!-- Teal page content  -->
+      <div class="card-panel z-depth-1 threadLists">
+        <span>{{title}}</span>
+        <div class="right-align">
+          <a class="waves-effect waves-light btn-large">Close Case</a>
         </div>
       </div>
     </div>
