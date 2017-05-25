@@ -1,47 +1,47 @@
 <template name="customerThreadList">
-  <div class="threads">
-    <!-- Navbar goes here -->
-    <!-- Page Layout here -->
-    <h3>Thread List</h3>
-    <div class="row">
-      <div class="col s3">
-        <!-- Grey navigation panel -->
-        {{> profileCard}}
-      </div>
-      <div class="col s9">
-        <!-- Teal page content  -->
-        <div class="card-panel z-depth-1 threadLists">
-          <table class="highlight responsive-table bordered centered">
-            <thead>
-              <tr class="grey lighten-2 ">
-                <th>Status</th>
-                <th>Date</th>
-                <th>Title</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              {{#each threads}}
-              <tr>
-                {{>customerThreadItem}}
-              </tr>
-              {{/each}}
-            </tbody>
-          </table>
-        </div>
-        <!-- <div class="fixed-action-btn"> -->
-        <div class="right-align">
-        <a class="btn-floating btn-large red waves-effect waves-light">
-          <i class="material-icons add-thread">add</i>
-        </a>
-      </div>
-      <!-- </div> -->
-      <!-- <div class="fixed-action-btn">
-      <a class="btn-floating btn-large red waves-effect waves-light" href="#modalAddThread">
-      <i class="material-icons">add</i>
-    </a>
-  </div> -->
-</div>
+    <div class="threads">
+        <!-- Navbar goes here -->
+        <!-- Page Layout here -->
+        <h3>Thread List</h3>
+        <div class="row">
+            <div class="col s3">
+                <!-- Grey navigation panel -->
+                {{> profileCard}}
+            </div>
+            <div class="col s9">
+                <!-- Teal page content  -->
+                <div class="card-panel z-depth-1 threadLists">
+                    <table class="highlight responsive-table bordered centered">
+                        <thead>
+                            <tr class="grey lighten-2 ">
+                                <th>Status</th>
+                                <th>Date</th>
+                                <th>Title</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each threads}}
+                            <tr>
+                                {{>customerThreadItem}}
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+                <!-- <div class="fixed-action-btn"> -->
+                <div class="fixed-action-btn">
+                    <a class="btn-floating btn-large red waves-effect waves-light">
+                        <i class="material-icons add-thread">add</i>
+                    </a>
+                </div>
+                <!-- </div> -->
+                <!-- <div class="fixed-action-btn">
+                <a class="btn-floating btn-large red waves-effect waves-light" href="#modalAddThread">
+                <i class="material-icons">add</i>
+            </a>
+        </div> -->
+    </div>
 </div>
 </div>
 </template>
