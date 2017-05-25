@@ -23,11 +23,12 @@ Template.customerThreadList.helpers({
 });
 
 Template.customerThreadList.events({
-  'click .threadLists tr':function(e){
-    // console.log('this:'+this._id);
-    // console.log('this:'+this.threadID);
-    Router.go('customerThreadDetail');
-    // Router.go('customerThreadDetail', {_id: this._id});
+  'click .threadLists .thread-line':function(e){
+    e.preventDefault();
+
+    var currentID=this._id;
+    console.log('clicked '+currentID);
+    Router.go('customerThreadDetail', {_id: currentID});
   },
   'click .add-thread':function(){
     Router.go('customerThreadAdd');
