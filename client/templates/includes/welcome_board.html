@@ -6,7 +6,7 @@
         alert("位置情報が利用できます");
         //ユーザーの現在の位置情報を取得（位置情報の精度を高くする・6秒でタイムアウト・有効期限10分）
         navigator.geolocation.getCurrentPosition(
-            successCallback, errorCallback, {enableHighAccuracy:true; timeout:6000; maximumAge:600000;}
+            successCallback, errorCallback, { enableHighAccuracy:true, timeout:6000, maximumAge:600000 }
         );
     } else {
         //Geolocation APIを利用できない環境向けの処理
