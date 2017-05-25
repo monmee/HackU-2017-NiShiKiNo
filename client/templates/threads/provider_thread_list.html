@@ -5,6 +5,25 @@
             {{> profileCard}}
         </div>
         <div class="col s12 l9">
+            <div class="card-panel z-depth-1 threadLists">
+                <table class="highlight responsive-table bordered centered">
+                    <thead>
+                        <tr class="grey lighten-2 ">
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Title</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each threads}}
+                        <tr>
+                            {{>customerThreadItem}}
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </template>
