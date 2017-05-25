@@ -11,3 +11,22 @@ Template.customerThreadItem.helpers({
     return new Spacebars.SafeString(icon);
   }
 });
+
+Template.customerThreadItem.events({
+  'click .thread_edit':function(e){
+    e.preventDefault();
+
+    var currentID=this._id;
+    console.log('edit clicked');
+    // Router.go('customerThreadDetail', {_id: currentID});
+    Router.go('customerThreadEdit', {_id: currentID});
+  },
+  'click .thread_delete':function(e){
+    e.preventDefault();
+
+    var currentID=this._id;
+    alert('スレッドを削除しますか?');
+    // Router.go('customerThreadDetail', {_id: currentID});
+    // Router.go('customerThreadEdit', {_id: currentID});
+  },
+})

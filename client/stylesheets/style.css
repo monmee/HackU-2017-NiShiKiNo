@@ -19,3 +19,9 @@ body {
   font-family: GillSans, Calibri, Trebuchet, sans-serif;
   color: red;
 }
+
+.map-container {
+  width: 100%;
+  /*max-width: 100%;*/
+  height: 500px;
+}
