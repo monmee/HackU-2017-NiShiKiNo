@@ -1,7 +1,12 @@
 <template name="customerThreadItem">
   <!-- <li><a href="#">{{title}}</a><span>{{date}}</span></li> -->
-  <td>{{statusIcon status}}</td>
-  <td>{{date}}</td>
-  <td>{{title}}</td>
-  <td>{{postNum}}</td>
+    <td class="thread-line">{{statusIcon status}}</td>
+    <td class="thread-line">{{date}}</td>
+    <td class="thread-line">{{title}}</td>
+  <td>
+    <div class="row">
+      <a class="btn-floating green thread_edit"><i class="material-icons">mode_edit</i></a>
+      <a class="btn-floating red darken-1 thread_delete"><i class="material-icons">delete</i></a>
+    </div>
+  </td>
 </template>
