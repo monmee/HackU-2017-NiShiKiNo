@@ -1,22 +1,24 @@
 <template name="profileCard">
-  <div class="row">
-    <div class="">
-      <div class="card-panel">
-        <div class="card-image z-depth-2">
-          <img class="responsive-img" src="/images/pose_kiri_man.png">
-          <!-- <span class="card-title">Nymphaea</span> -->
+    <div class="row">
+        <div class="">
+            <div class="card-panel">
+                <div class="card-image z-depth-2">
+                    <img class="responsive-img" src="/images/pose_kiri_man.png">
+                    <!-- <span class="card-title">Nymphaea</span> -->
+                </div>
+                <div class="card-content">
+                    <p>
+                        Name: Kiri Man<br>
+                        Age: 24 <br>
+                        ID: {{id}}<br>
+                        Address: tokyo, Japan<br>
+                        Comment: Hi! I am Kiri man.
+                    </p>
+                </div>
+                <div class="card-action">
+                    <a href="/edit">Edit Profile</a>
+                </div>
+            </div>
         </div>
-        <div class="card-content">
-          <p>Name: Kiri Man<br>
-            Age: 24 <br>
-            Address: tokyo, Japan<br>
-            Comment: Hi! I am Kiri man.
-          </p>
-        </div>
-        <div class="card-action">
-          <a href="/edit">Edit Profile</a>
-        </div>
-      </div>
     </div>
-  </div>
 </template>

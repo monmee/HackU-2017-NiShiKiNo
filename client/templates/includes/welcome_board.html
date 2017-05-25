@@ -1,5 +1,5 @@
 <template name="welcomeBoard">
-    <h1 class="center-align">ようこそ！{{currentUser.emails.[0].address}}さん</h1>
+    <h3 class="center-align">ようこそ！{{currentUser.emails.[0].address}}さん</h3>
     <script>
     if (navigator.geolocation) {
         //Geolocation APIを利用できる環境向けの処理
@@ -42,4 +42,5 @@
         //デバッグ用→　document.getElementById("show_result").innerHTML = error.message;
     }
     </script>
+    <div id="show_result"></div>
 </template>
