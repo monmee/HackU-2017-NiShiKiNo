@@ -1,13 +1,15 @@
 <template name="layout">
     <!--{{>spinner}}-->
 
-  <!-- <div class="container"> -->
-  {{> header}}
-  <div id="main" class="row-fluid">
-    {{> yield}}
-  </div>
-  <!-- </div> -->
-  <footer>
-    {{>footer}}
-  </footer>
+    <!-- <div class="container"> -->
+    {{> header}}
+    <main>
+        <div id="main" class="row-fluid">
+            {{> yield}}
+        </div>
+    </main>
+    <!-- </div> -->
+    <footer>
+        {{>footer}}
+    </footer>
 </template>
