@@ -8,7 +8,7 @@ Template.customerThreadItem.helpers({
     }else{
       icon='<div class="left-align"><ul class="center-align"><li><i class="material-icons red-text text-darken-2 center">report_problem</i></li><li>Error</li></ul></div>';
     }
-    return new Spacebars.SafeString(icon);
+    return new Spacebars.SafeString(icon);;
   }
 });
 
@@ -17,7 +17,7 @@ Template.customerThreadItem.events({
     e.preventDefault();
 
     var currentID=this._id;
-    console.log('edit clicked');
+    // console.log('edit clicked');
     // Router.go('customerThreadDetail', {_id: currentID});
     Router.go('customerThreadEdit', {_id: currentID});
   },

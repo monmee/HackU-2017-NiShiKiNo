@@ -1,7 +1,7 @@
+// Template.postItem.onBeforeAction({
+//   // console.log(Posts.find({threadID:Threads._id}));
+// });
+
 Template.postItem.helpers({
-  domain: function() {
-    var a = document.createElement('a');
-    a.href = this.url;
-    return a.hostname;
-  }
+
 });
