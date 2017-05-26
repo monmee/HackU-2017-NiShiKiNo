@@ -1,29 +1,3 @@
-// threadData=[
-//   {
-//     threadID: '1',
-//     customerID: {},
-//     threadDate: '2017/05/26',
-//     threadTitle:'カレーのアレ',
-//     threadCategories:{},
-//     threadComment:{},
-//     location:{},
-//     isClosed: false,
-//     threadStatus: 'processing',
-//     searchRange:{}
-//   },
-//   {
-//     threadID: '2',
-//     customerID: {},
-//     threadDate: '2017/05/24',
-//     threadTitle:'シンセのACアダプター',
-//     threadCategories:{},
-//     threadComment:{},
-//     location:{},
-//     isClosed: true,
-//     threadStatus:'done',
-//     searchRange:{}
-//   }
-//   ];
 
 Template.customerThreadList.helpers({
   threads: function(){
