@@ -12,6 +12,9 @@ Template.customerThreadAdd.helpers({
         zoom: 8
       };
     }
+  },
+  searchRange:function(){
+    return Session.get('searchRange');
   }
 });
 
@@ -31,16 +34,16 @@ Template.customerThreadAdd.events({
     e.preventDefault();//formのsubmit処理無効化
 
     var addThread={
-        threadID: 'test',
-        customerID: Meteor.userId(),
-        threadDate: new Date(),
-        threadTitle: $(e.target).find('[name=title]').val(),
-        threadCategories:$(e.target).find('[name=categories]').val(),
-        threadComment:$(e.target).find('[name=detail]').val(),
-        location:$(e.target).find('[name=location]').val(),
-        isClosed: false,
-        threadStatus: 'processing',
-        searchRange:1
+      threadID: 'test',
+      customerID: Meteor.userId(),
+      threadDate: new Date(),
+      threadTitle: $(e.target).find('[name=title]').val(),
+      threadCategories:$(e.target).find('[name=categories]').val(),
+      threadComment:$(e.target).find('[name=detail]').val(),
+      location:$(e.target).find('[name=location]').val(),
+      isClosed: false,
+      threadStatus: 'processing',
+      searchRange:Number($(e.target).find('[name=rangeSlider]').val()),
     }
     Meteor.call('threadInsert',addThread,function(error,result){
       if(error){return alert(error.reason);}
@@ -49,6 +52,12 @@ Template.customerThreadAdd.events({
 
       Router.go('customerThreadDetail',{_id: result._id});
     });
+  },
+  'input input[type=range]':function(e){
+    var sliderValue = e.currentTarget.value;
+     Session.set('searchRange', sliderValue);
+    var val=$(e.target).find('[name=rangeSlider]').val();
+    console.log('value: '+sliderValue);
   }
 });
 
