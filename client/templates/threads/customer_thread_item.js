@@ -25,7 +25,15 @@ Template.customerThreadItem.events({
     e.preventDefault();
 
     var currentID=this._id;
-    alert('スレッドを削除しますか?');
+    // alert('スレッドを削除しますか?');
+
+    if (confirm("Delete this post?")) {
+      var currentPostId = this._id;
+      console.log(currentID);
+      Threads.remove(currentID);
+      Router.go('customerThreadList');
+    }
+
     // Router.go('customerThreadDetail', {_id: currentID});
     // Router.go('customerThreadEdit', {_id: currentID});
   },
