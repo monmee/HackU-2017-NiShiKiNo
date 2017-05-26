@@ -26,4 +26,30 @@ Template.customerThreadAdd.onCreated(function() {
   });
 });
 
+Template.customerThreadAdd.events({
+  'submit form':function(e){
+    e.preventDefault();//formのsubmit処理無効化
+
+    var addThread={
+        threadID: 'test',
+        customerID: Meteor.userId(),
+        threadDate: new Date(),
+        threadTitle: $(e.target).find('[name=title]').val(),
+        threadCategories:$(e.target).find('[name=categories]').val(),
+        threadComment:$(e.target).find('[name=detail]').val(),
+        location:$(e.target).find('[name=location]').val(),
+        isClosed: false,
+        threadStatus: 'processing',
+        searchRange:1
+    }
+    Meteor.call('threadInsert',addThread,function(error,result){
+      if(error){return alert(error.reason);}
+
+      if(result.postExists){return alert('this thread has already been created.')}
+
+      Router.go('customerThreadDetail',{_id: result._id});
+    });
+  }
+});
+
 //api key: AIzaSyCKn0Ze4qeM5C-pJrksWpJOPe9XWTmurdc
