@@ -1,11 +1,12 @@
+
 Template.customerThreadAdd.onRendered(function(){
   GoogleMaps.load({key:'AIzaSyCKn0Ze4qeM5C-pJrksWpJOPe9XWTmurdc'});
 })
 
 Template.customerThreadAdd.helpers({
   location: function() {
-    var location = Geolocation.currentLocation()
-    console.log(location)
+    var location = Geolocation.currentLocation();
+    // console.log(location)
 
     return{
       lat: location.coords.latitude,
@@ -30,14 +31,26 @@ Template.customerThreadAdd.helpers({
       // Map initialization options
       return {
         center: new google.maps.LatLng(lat, lng),
-        zoom: 16
+        zoom: 15
       };
     }
+  },
+  searchRange:function(){
+    return Session.get('searchRange');
   }
 });
 
 Template.customerThreadAdd.onCreated(function() {
   // We can use the `ready` callback to interact with the map API once the map is ready.
+  // GoogleMaps.load({key:'AIzaSyCKn0Ze4qeM5C-pJrksWpJOPe9XWTmurdc'});
+
+  // if (navigator.geolocation) {
+  //   navigator.geolocation.getCurrentPosition(successCallback,errorCallback);
+  // }else{
+  //   alert('現在地を自動取得できません．\n手動で現在地を設定してください．');
+  // }
+  // location = Geolocation.currentLocation();
+
   GoogleMaps.ready('exampleMap', function(map) {
     // Add a marker to the map once it's ready
     var marker = new google.maps.Marker({
@@ -61,7 +74,7 @@ Template.customerThreadAdd.events({
       location:$(e.target).find('[name=location]').val(),
       isClosed: false,
       threadStatus: 'processing',
-      searchRange:1
+      searchRange:Number($(e.target).find('[name=rangeSlider]').val()),
     }
     Meteor.call('threadInsert',addThread,function(error,result){
       if(error){return alert(error.reason);}
@@ -70,6 +83,12 @@ Template.customerThreadAdd.events({
 
       Router.go('customerThreadDetail',{_id: result._id});
     });
+  },
+  'input input[type=range]':function(e){
+    var sliderValue = e.currentTarget.value;
+    Session.set('searchRange', sliderValue);
+    var val=$(e.target).find('[name=rangeSlider]').val();
+    console.log('value: '+sliderValue);
   }
 });
 
