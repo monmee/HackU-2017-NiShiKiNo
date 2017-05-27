@@ -4,7 +4,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background-color: #f5f5f5;
+    background-color: #f6f4db;
 }
 /*header nav ul {
 height: 60px;

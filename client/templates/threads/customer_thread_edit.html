@@ -1,5 +1,25 @@
 <template name="customerThreadEdit">
-  <h3>Thread Edit</h3>
-  <h2>{{threadTitle}}</h2>
-  <p></p>
+  <h3>スレッドの編集</h3>
+  <div class="card-panel z-depth-1">
+    <form>
+      <label class="control-label" for="title">Title</label>
+      <input name="title" type="text" placeholder="タイトルを入力" id="title" class="validate" value={{threadTitle}} required/>
+
+      <label class="control-label" for="category">Category</label>
+      <input name="categories" type="text" placeholder="カテゴリーを入力" id="category" class="validate" value={{threadCategories}} required/>
+
+      <label class="control-label" for="detail">Detail</label>
+      <div class="input-field">
+        <textarea name="detail" class="materialize-textarea validate" placeholder="希望する商品やサービスの詳細" id="detail" value={{threadComment}} required></textarea>
+      </div>
+
+      <div class="right-align">
+        <button name="submit" class="btn waves-effect waves-light purple lighten-3" type="submit" >Edit
+          <i class="material-icons right">send</i>
+        </button>
+        <button id="cancelButton" name="cancel" class="btn waves-effect waves-light purple lighten-3" type="button" >Cancel
+        </button>
+      </div>
+    </form>
+  </div>
 </template>
