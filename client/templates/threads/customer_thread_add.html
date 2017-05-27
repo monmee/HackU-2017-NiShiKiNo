@@ -34,36 +34,55 @@
         <label class="control-label" for="location">Location</label>
         <input name="location" type="text" placeholder="現在位置を入力" id="location" class="validate" value={{location.lat}}{{location.lnd}} />
         ======= -->
-        <div class="rangeSlider">
-          <div class="row">
-            <label for="slider">Search Range</label>
-            <span class="left-align">  {{searchRange}} km</span>
-          </div>
-          <div class="row">
-            <p class="range-field">
-              <input name="rangeSlider" type="range" id="slider" min="0.1" max=20.0 value="1.0" step="0.1" required/>
-            </p>
-          </div>
-        </div>
+        <!-- <div class="rangeSlider">
+        <div class="row">
+        <label for="slider">Search Range</label>
+        <span class="left-align">  {{searchRange}} km</span>
+      </div>
+      <div class="row">
+      <p class="range-field">
+      <input name="rangeSlider" type="range" id="slider" min="0.1" max=20.0 value="1.0" step="0.1" required/>
+    </p>
+  </div>
+</div> -->
 
-        <div class="card-panel">
-          <div class="location">
-            <label class="control-label" for="location">Location</label>
-            <input name="location" type="text" placeholder="現在位置を入力" id="location" class="validate"  value={{location.lat}}{{location.lnd}} required>
-          </div>
-          <div class="conteiner">
-            <div class="map-container">
-              {{> googleMap name="exampleMap" options=exampleMapOptions}}
-            </div>
-          </div>
+<div class="card-panel">
+  <div class="row">
+    <div class="col s3">
+      <label class="control-label" for="lat">緯度</label>
+      <input name="lat" type="text" placeholder="緯度を入力" id="location.lat" class="validate lat" required>
+    </div>
+    <div class="col s3">
+      <label class="control-label" for="lng">経度</label>
+      <input name="lng" type="text" placeholder="経度を入力" id="location.lng" class="validate lng" required>
+    </div>
+    <div class="col s6">
+      <div class="rangeSlider">
+        <div class="row">
+          <label for="slider">Search Range</label>
+          <span class="left-align"> 　　　{{searchRange}} km</span>
         </div>
-
-        <div class="right-align">
-          <button class="btn waves-effect waves-light purple lighten-3" type="submit" name="action">New
-            <i class="material-icons right">send</i>
-          </button>
+        <div class="row">
+          <p class="range-field">
+            <input name="rangeSlider" type="range" id="slider" min="0.1" max=20.0 value="1.0" step="0.1" required/>
+          </p>
         </div>
       </div>
-    </form>
+    </div>
   </div>
+  <div class="conteiner">
+    <div class="map-container">
+      {{> googleMap name="exampleMap" options=exampleMapOptions}}
+    </div>
+  </div>
+</div>
+
+<div class="right-align">
+  <button class="btn waves-effect waves-light purple lighten-3" type="submit" name="action">New
+    <i class="material-icons right">send</i>
+  </button>
+</div>
+</div>
+</form>
+</div>
 </template>

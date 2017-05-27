@@ -7,12 +7,19 @@ Template.customerThreadAdd.helpers({
   location: function() {
     var location = Geolocation.currentLocation();
     // console.log(location)
+    // GoogleMaps.maps.exampleMap.instance
 
     return{
       lat: location.coords.latitude,
-      lnd: location.coords.longitude
+      lng: location.coords.longitude
     }
   },
+  // locationLat:function(){
+  //   return String(GoogleMaps.maps.exampleMap.instance.getCenter().lat());
+  // },
+  // locationLat:function(){
+  //   return GoogleMaps.maps.exampleMap.instance.getCenter().lng();
+  // },
 
   exampleMapOptions: function() {
     var position = Geolocation.latLng()
@@ -31,7 +38,7 @@ Template.customerThreadAdd.helpers({
       // Map initialization options
       return {
         center: new google.maps.LatLng(lat, lng),
-        zoom: 15
+        zoom: 12
       };
     }
   },
@@ -42,21 +49,35 @@ Template.customerThreadAdd.helpers({
 
 Template.customerThreadAdd.onCreated(function() {
   // We can use the `ready` callback to interact with the map API once the map is ready.
-  // GoogleMaps.load({key:'AIzaSyCKn0Ze4qeM5C-pJrksWpJOPe9XWTmurdc'});
-
-  // if (navigator.geolocation) {
-  //   navigator.geolocation.getCurrentPosition(successCallback,errorCallback);
-  // }else{
-  //   alert('現在地を自動取得できません．\n手動で現在地を設定してください．');
-  // }
-  // location = Geolocation.currentLocation();
-
   GoogleMaps.ready('exampleMap', function(map) {
     // Add a marker to the map once it's ready
     var marker = new google.maps.Marker({
       position: map.options.center,
-      map: map.instance
+      map: map.instance,
+      draggable: true
     });
+    // console.log(map);
+    var circleOptions = {
+      center: new google.maps.LatLng(Number(map.options.center)),  // 中心点(google.maps.LatLng)
+      fillColor: '#0000ff',   // 塗りつぶし色
+      fillOpacity: 0.2,       // 塗りつぶし透過度（0: 透明 ⇔ 1:不透明）
+      map: map.instance,               // 表示させる地図（google.maps.Map）
+      radius: 500,           // 半径（ｍ）
+      strokeColor: '#0000ff', // 外周色
+      strokeOpacity: 0.8,       // 外周透過度（0: 透明 ⇔ 1:不透明）
+      strokeWeight: 1         // 外周太さ（ピクセル）
+    };
+    circleObj = new google.maps.Circle(circleOptions);
+    circleObj.bindTo("center", marker, "position");
+    $(':text[name="lat"]').val(String(map.options.center.lat()));
+    $(':text[name="lng"]').val(String(map.options.center.lng()));
+    marker.addListener('dragend',function(){      // マーカーのリスナー
+      var pos=marker.getPosition();
+      // Session.set('location.lat',pos.lat());
+      // Session.set('location.lng',pos.lng());
+      $(':text[name="lat"]').val(String(pos.lat()));
+      $(':text[name="lng"]').val(String(pos.lng()));
+    })
   });
 });
 
@@ -64,6 +85,11 @@ Template.customerThreadAdd.events({
   'submit form':function(e){
     e.preventDefault();//formのsubmit処理無効化
 
+    var pos ={
+      lat:Number($(e.target).find('[name=lat]').val()),
+      lng:Number($(e.target).find('[name=lng]').val())
+  }
+  console.log(pos);
     var addThread={
       threadID: 'test',
       customerID: Meteor.userId(),
@@ -71,7 +97,7 @@ Template.customerThreadAdd.events({
       threadTitle: $(e.target).find('[name=title]').val(),
       threadCategories:$(e.target).find('[name=categories]').val(),
       threadComment:$(e.target).find('[name=detail]').val(),
-      location:$(e.target).find('[name=location]').val(),
+      location:pos,
       isClosed: false,
       threadStatus: 'processing',
       searchRange:Number($(e.target).find('[name=rangeSlider]').val()),
@@ -89,7 +115,12 @@ Template.customerThreadAdd.events({
     Session.set('searchRange', sliderValue);
     var val=$(e.target).find('[name=rangeSlider]').val();
     console.log('value: '+sliderValue);
-  }
+    circleObj.setRadius(Number(sliderValue)*1000.0);
+    // console.log(circleObj);
+    console.log(GoogleMaps.maps.exampleMap.instance.getCenter().lat());
+  },
+
 });
 
+// マップのオブジェクトを直接触るにはGoogleMaps.maps.exampleMap.instanceを参照
 //api key: AIzaSyCKn0Ze4qeM5C-pJrksWpJOPe9XWTmurdc
