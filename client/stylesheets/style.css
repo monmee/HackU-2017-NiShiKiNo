@@ -5,6 +5,7 @@ body {
     min-height: 100vh;
     flex-direction: column;
     background-color: #f6f4db;
+    background-image: url("");
 }
 /*header nav ul {
 height: 60px;
@@ -32,4 +33,12 @@ main {
     width: 100%;
     /*max-width: 100%;*/
     height: 500px;
+}
+
+.btn, .btn-large {
+  background-color: #e53935;
+}
+
+.btn:hover, .btn-large:hover {
+  background-color: #ef5350;
 }
