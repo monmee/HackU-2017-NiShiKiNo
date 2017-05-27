@@ -33,3 +33,11 @@ main {
     /*max-width: 100%;*/
     height: 500px;
 }
+
+.btn, .btn-large {
+  background-color: #e53935;
+}
+
+.btn:hover, .btn-large:hover {
+  background-color: #ef5350;
+}
