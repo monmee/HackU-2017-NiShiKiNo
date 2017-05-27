@@ -15,7 +15,7 @@ if ( Meteor.users.find().count() === 0 ) {
       userType: 'provider',
     }
   });
-  var customerId = Accounts.createUser({
+  var customerId2 = Accounts.createUser({
     username: 'customer2',
     email: 'customer2@gmail.com',
     password: '333333',
@@ -54,7 +54,7 @@ if(Threads.find().count()===0){
     ids=Threads.insert(
       {
         threadID: '2',
-        customerID: {},
+        customerID: customerId2,
         threadDate: '2017/05/24',
         threadTitle:'シンセのACアダプター',
         threadCategories:{},
