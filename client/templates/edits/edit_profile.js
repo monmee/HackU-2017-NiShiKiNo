@@ -2,11 +2,12 @@ import { Meteor } from 'meteor/meteor';
 import './edit_profile.html';
 
 Template.editProfile.helpers({
-  username: function() 
+  username: function()
   {
     return Meteor.user().username;
   }
 });
+
 Template.editProfile.events({
   '.submit .update-profile': function (e) {
       e.preventDefault();
