@@ -5,6 +5,7 @@ if ( Meteor.users.find().count() === 0 ) {
     password: '111111',
     profile: {
       userType: 'customer',
+      image: '/images/pose_kiri_man.png'
     }
   });
   var providerId = Accounts.createUser({
@@ -13,6 +14,7 @@ if ( Meteor.users.find().count() === 0 ) {
     password: '222222',
     profile: {
       userType: 'provider',
+      image: '/images/omise_shop_tatemono.png'
     }
   });
   var customerId2 = Accounts.createUser({
@@ -21,6 +23,7 @@ if ( Meteor.users.find().count() === 0 ) {
     password: '333333',
     profile: {
       userType: 'customer',
+      image: '/images/nojuku.png'
     }
   });
 }
