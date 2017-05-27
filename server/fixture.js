@@ -31,10 +31,10 @@ if(Threads.find().count()===0){
     {
       threadID: '1',
       customerID: customerId,
-      threadDate: '2017/05/26',
+      threadDate: '2017/05/26 11:30',
       threadTitle: 'カレーのアレ',
       threadCategories:{},
-      threadComment:'カレーのルーを入れる，何か魔法のランプみたいなやつ探してます．',
+      threadComment:'カレーのルーを入れる、なんか魔法のランプみたいなやつ探してます',
       location:{},
       isClosed: false,
       threadStatus: 'processing',

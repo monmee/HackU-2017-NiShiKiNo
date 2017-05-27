@@ -3,5 +3,5 @@
 // });
 
 Template.postItem.helpers({
-
+  postUsername: "shop"
 });
