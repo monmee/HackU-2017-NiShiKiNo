@@ -1,31 +1,30 @@
 <template name="providerThreadList">
+  <div class="threads section no-pad-bot">
     <div class="row">
-        <h3>店舗用スレッドページ</h3>
-        <div class="col s12 m3 l3">
-            {{> profileCard}}
+      <div class="col s12 m3 l3">
+        {{> profileCard}}
+      </div>
+      <div class="col s12 m9 l9">
+        <div class="card-panel z-depth-1 threadLists">
+          <table class="highlight responsive-table bordered centered">
+            <thead>
+              <tr class="grey darken-4 white-text">
+                <th>Status</th>
+                <th>Date</th>
+                <th>Title</th>
+                <th>Edit</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each threads}}
+              <tr>
+                {{>customerThreadItem}}
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
         </div>
-        <div class="col s12 m9 l9">
-            <div class="card-panel z-depth-1 threadLists">
-                <table class="highlight responsive-table bordered centered">
-                    <thead>
-                        <tr class="grey lighten-2 ">
-                            <th>Status</th>
-                            <th>Date</th>
-                            <th>Title</th>
-                            <th>User</th>
-                            <th>Edit</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{#each threads}}
-                        <tr>
-                            {{>customerThreadItem}}
-                        </tr>
-                        {{/each}}
-                    </tbody>
-                </table>
-            </div>
-        </div>
+      </div>
     </div>
+  </div>
 </template>
