@@ -15,6 +15,14 @@ if ( Meteor.users.find().count() === 0 ) {
       userType: 'provider',
     }
   });
+  var customerId = Accounts.createUser({
+    username: 'customer2',
+    email: 'customer2@gmail.com',
+    password: '333333',
+    profile: {
+      userType: 'customer',
+    }
+  });
 }
 
 if(Threads.find().count()===0){

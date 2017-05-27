@@ -32,7 +32,7 @@ AccountsTemplates.configure({
   termsUrl: 'terms-of-use',
 
   // Redirects
-  homeRoutePath: '/home',
+  homeRoutePath: '/',
   redirectTimeout: 4000,
 
   // Hooks
@@ -79,7 +79,7 @@ AccountsTemplates.addFields([
 
 AccountsTemplates.addField({
   _id: 'userType',
-  type: 'radio',
+  type: 'select',
   displayName: "アカウントタイプ",
   select: [
     {
