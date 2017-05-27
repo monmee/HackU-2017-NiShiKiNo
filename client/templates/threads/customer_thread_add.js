@@ -1,5 +1,7 @@
+latitude=35.6750756712;
+longitude=139.769065316;
+
 Template.customerThreadAdd.onRendered(function(){
-  GoogleMaps.load({key:'AIzaSyCKn0Ze4qeM5C-pJrksWpJOPe9XWTmurdc'});
 })
 
 Template.customerThreadAdd.helpers({
@@ -8,8 +10,8 @@ Template.customerThreadAdd.helpers({
     if (GoogleMaps.loaded()) {
       // Map initialization options
       return {
-        center: new google.maps.LatLng(-37.8136, 144.9631),
-        zoom: 8
+        center: new google.maps.LatLng(latitude, longitude),
+        zoom: 15
       };
     }
   },
@@ -20,6 +22,14 @@ Template.customerThreadAdd.helpers({
 
 Template.customerThreadAdd.onCreated(function() {
   // We can use the `ready` callback to interact with the map API once the map is ready.
+  GoogleMaps.load({key:'AIzaSyCKn0Ze4qeM5C-pJrksWpJOPe9XWTmurdc'});
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(successCallback,errorCallback);
+  }else{
+    alert('現在地を自動取得できません．\n手動で現在地を設定してください．');
+  }
+
   GoogleMaps.ready('exampleMap', function(map) {
     // Add a marker to the map once it's ready
     var marker = new google.maps.Marker({
@@ -27,6 +37,21 @@ Template.customerThreadAdd.onCreated(function() {
       map: map.instance
     });
   });
+
+
+  function successCallback(position) {
+    //成功したときの処理
+    console.log('success getPosition');
+    console.log('緯度'+position.coords.latitude+'，経度'+ position.coords.longitude);
+    latitude=position.coords.latitude;
+    longitude=position.coords.longitude;
+  }
+  function errorCallback(error) {
+    //失敗のときの処理
+    console.log('error getPosition');
+  }
+
+
 });
 
 Template.customerThreadAdd.events({
@@ -55,7 +80,7 @@ Template.customerThreadAdd.events({
   },
   'input input[type=range]':function(e){
     var sliderValue = e.currentTarget.value;
-     Session.set('searchRange', sliderValue);
+    Session.set('searchRange', sliderValue);
     var val=$(e.target).find('[name=rangeSlider]').val();
     console.log('value: '+sliderValue);
   }
