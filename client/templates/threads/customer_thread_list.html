@@ -1,19 +1,14 @@
 <template name="customerThreadList">
-  <div class="threads">
-    <!-- Navbar goes here -->
-    <!-- Page Layout here -->
-    <h3>顧客用スレッドページ</h3>
+  <div class="threads section no-pad-bot">
     <div class="row">
       <div class="col s12 m3 l3">
-        <!-- Grey navigation panel -->
         {{> profileCard}}
       </div>
       <div class="col s12 m9 l9">
-        <!-- Teal page content  -->
         <div class="card-panel z-depth-1 threadLists">
           <table class="highlight responsive-table bordered centered">
             <thead>
-              <tr class="grey lighten-2 ">
+              <tr class="grey darken-4 white-text">
                 <th>Status</th>
                 <th>Date</th>
                 <th>Title</th>
@@ -31,7 +26,7 @@
         </div>
         <div class="fixed-action-btn">
           <div class="right-align">
-            <a class="btn-floating btn-large purple lighten-3 waves-effect waves-light">
+            <a class="btn-floating btn-large grey darken-4 waves-effect waves-light">
               <i class="material-icons add-thread">add</i>
             </a>
           </div>

@@ -1,15 +1,7 @@
 
 Template.customerThreadList.helpers({
   threads: function(){
-    // return threadData;
-    // console.log();
-    // if(Threads.find().count()==0){
-    //   var cursor=Threads.insert(threadData);
-    //   console.log(cursor);
-    //   // return threadData;
-    // }
-    // console.log('thread list'+Threads.find());
-    return Threads.find();
+    return Threads.find( {customerID: Meteor.userId()} );
   }
 });
 

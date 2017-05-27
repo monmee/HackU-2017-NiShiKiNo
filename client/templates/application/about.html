@@ -1,24 +1,26 @@
 <template name="aboutApp">
   <h1>About</h1>
-  <div class="container">
-    <h1 id="johoo-">JOHOO!!</h1>
-    <h2 id="-">概要</h2>
-    <p>消費者と実店舗をつなげるサービスです．</p>
-    <img src="/images/abst.jpg" class="responsive-img">
-    <h2 id="-">ターゲット</h2>
-    <ul>
-      <li>「いますぐ欲しい」消費者</li>
-      <li>その場で商品やサービスを提供するお店
-        ex. レストラン，雑貨屋，コンビニ etc．</li>
-      </ul>
-      <h2 id="-">メリット</h2>
-      <ul>
-        <li><p>消費者</p>
+  <div class="row">
+    <div class="offset-s1 col s10">
+      <div class="card">
+        <div class="container">
+          <br>
+          <h2 id="-">JOHOO!! とは </h2>
+          <p>探している商品やサービスを書くと、やまびこのように近くのお店が返信してくれるサービスです。</p>
+          <div class="center-align">
+            <img src="/images/abst.jpg" class="responsive-img">
+          </div>
+          <h2 id="-">ターゲット</h2>
           <ul>
-            <li>すぐに欲しい商品を買える店が見つかる
-              ex.</li>
-              <li>商品名が曖昧な場合でも探すことができる
-                ex.</li>
+            <li>「いますぐ欲しい」消費者</li>
+            <li>その場で商品やサービスを提供するお店<br>ex. レストラン，雑貨屋，コンビニ etc．</li>
+          </ul>
+          <h2 id="-">メリット</h2>
+          <ul>
+            <li><p>消費者</p>
+              <ul>
+                <li>すぐに欲しい商品を買える店が見つかる<br>ex.</li>
+                <li>商品名が曖昧な場合でも探すことができる<br>ex.</li>
               </ul>
             </li>
             <li><p>店舗</p>
@@ -28,13 +30,20 @@
               </ul>
             </li>
           </ul>
-          <h2 id="-">使い方</h2>
-          <img src="/images/system.jpg" class="responsive-img">
-          <h3 id="-">消費者側のユーザー</h3>
-          <h3 id="-">店舗側のユーザー</h3>
-          <ol>
-            <li>近隣の</li>
-          </ol>
-        </div>
 
-      </template>
+          <h2 id="-">システム概要</h2>
+          <div class="center-align">
+            <img src="/images/system.jpg" class="responsive-img">
+          </div>
+          <ol>
+            <li>欲しい商品や，サービスを提供している店舗が近隣にないかアプリに問い合わせます．</li>
+            <li>アプリは，問い合わせのカテゴリーや指定された範囲にしたがって近隣の店舗へ通知を行います．</li>
+            <li>通知を受けた店舗は，問い合わせの商品やサービスを扱っているか確認し，在庫情報や営業時間などを返信します．</li>
+            <li>店舗からの返信を消費者に通知し，もっとも条件の良い店舗を選択します．</li>
+          </ol>
+          <br><br>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
