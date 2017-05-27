@@ -15,11 +15,21 @@ Template.customerThreadAdd.helpers({
 
   exampleMapOptions: function() {
     var position = Geolocation.latLng()
+    // とりあえず電通大の位置いれとく
+    var lat = 35.6576157
+    var lng = 139.5439219
+
+    if(position){
+      // 位置情報とれたらそっち使う
+      lat = position.lat
+      lng = position.lng
+    }
+
     // Make sure the maps API has loaded
     if (GoogleMaps.loaded()) {
       // Map initialization options
       return {
-        center: new google.maps.LatLng(position.lat, position.lng),
+        center: new google.maps.LatLng(lat, lng),
         zoom: 16
       };
     }
