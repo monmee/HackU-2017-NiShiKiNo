@@ -1,6 +1,7 @@
+import {GOOGLEMAP_APIKEY} from '../../../config.js';
 
 Template.customerThreadAdd.onRendered(function(){
-  GoogleMaps.load({key:'AIzaSyCKn0Ze4qeM5C-pJrksWpJOPe9XWTmurdc'});
+  GoogleMaps.load({key: GOOGLEMAP_APIKEY});
 })
 
 Template.customerThreadAdd.helpers({
@@ -56,7 +57,6 @@ Template.customerThreadAdd.onCreated(function() {
       map: map.instance,
       draggable: true
     });
-    // console.log(map);
     var circleOptions = {
       center: new google.maps.LatLng(Number(map.options.center)),  // 中心点(google.maps.LatLng)
       fillColor: '#0000ff',   // 塗りつぶし色
@@ -73,8 +73,6 @@ Template.customerThreadAdd.onCreated(function() {
     $(':text[name="lng"]').val(String(map.options.center.lng()));
     marker.addListener('dragend',function(){      // マーカーのリスナー
       var pos=marker.getPosition();
-      // Session.set('location.lat',pos.lat());
-      // Session.set('location.lng',pos.lng());
       $(':text[name="lat"]').val(String(pos.lat()));
       $(':text[name="lng"]').val(String(pos.lng()));
     })
@@ -116,11 +114,8 @@ Template.customerThreadAdd.events({
     var val=$(e.target).find('[name=rangeSlider]').val();
     console.log('value: '+sliderValue);
     circleObj.setRadius(Number(sliderValue)*1000.0);
-    // console.log(circleObj);
     console.log(GoogleMaps.maps.exampleMap.instance.getCenter().lat());
   },
 
 });
 
-// マップのオブジェクトを直接触るにはGoogleMaps.maps.exampleMap.instanceを参照
-//api key: AIzaSyCKn0Ze4qeM5C-pJrksWpJOPe9XWTmurdc
